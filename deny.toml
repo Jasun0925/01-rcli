@@ -64,9 +64,10 @@ feature-depth = 1
 # https://embarkstudios.github.io/cargo-deny/checks/advisories/cfg.html
 [advisories]
 # The path where the advisory databases are cloned/fetched into
-# db-path = "$CARGO_HOME/advisory-dbs"
-# # The url(s) of the advisory databases to use
-# db-urls = ["https://github.com/rustsec/advisory-db"]
+#db-path = "$CARGO_HOME/advisory-dbs"
+#db-path = "~/.cargo/advisory-dbs"
+# The url(s) of the advisory databases to use
+db-urls = ["https://github.com/rustsec/advisory-db"]
 # A list of advisory IDs to ignore. Note that ignored advisories will still
 # output a note when they are encountered.
 ignore = [
@@ -90,7 +91,8 @@ ignore = [
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
 allow = [
     "MIT",
-    #"Apache-2.0",
+    "Apache-2.0",
+    "Unicode-DFS-2016",
     #"Apache-2.0 WITH LLVM-exception",
 ]
 # The confidence threshold for detecting a license from license text.
